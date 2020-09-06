@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Route } from "react-router-dom"
+import Home from "./pages"
+import Cham from "pages/cham"
+import Raim from "pages/raim"
+import Navigation from "components/Nabigation"
+import Footer from "components/Footer"
 function App() {
+  const onScroll = (event: React.UIEvent<HTMLDivElement, UIEvent>) => {
+    console.log(`myRef.scrollTop: ${event}`)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div onScroll={onScroll}>
+      <BrowserRouter>
+        <Route exact path='/' component={Home} />
+
+        <Navigation>
+          <Route exact path='/cham' component={Cham} />
+          <Route exact path='/raim' component={Raim} />
+        </Navigation>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }
