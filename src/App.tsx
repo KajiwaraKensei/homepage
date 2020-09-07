@@ -6,11 +6,9 @@ import Raim from "pages/raim"
 import Navigation from "components/Nabigation"
 import Footer from "components/Footer"
 function App() {
-  const onScroll = (event: React.UIEvent<HTMLDivElement, UIEvent>) => {
-    console.log(`myRef.scrollTop: ${event}`)
-  }
+
   return (
-    <div onScroll={onScroll}>
+    <div>
       <BrowserRouter>
         <Route exact path='/' component={Home} />
 

@@ -2,6 +2,8 @@
 // 
 import React from "react"
 import { Article } from "./style"
+import Cat from "images/catsmethod.png"
+
 // ______________________________________________________
 // 型定義
 
@@ -17,7 +19,7 @@ const Component: React.FC = (props) => {
   return (
     <Article>
       <header className="post-info">
-        <h2 className="post-title">飼えなくなってしまった場合</h2>
+        <h2 className="post-title">飼えなくなってしまった場合<img src={Cat} alt="" /></h2>
       </header>
       <div>
 
@@ -28,6 +30,7 @@ const Component: React.FC = (props) => {
           <li>ペット禁止の集合住宅で飼っていることがバレてしまった場合</li>
           <li>子猫が多く生まれたが全頭育てることが不可能な場合</li>
         </ul>
+        <br />
         <p>上記の例などによって飼えなくなってしまった場合には</p>
         <ul>
           <li>獣医や通っている動物病院に相談してみる</li>

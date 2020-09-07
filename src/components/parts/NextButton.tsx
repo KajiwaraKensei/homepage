@@ -46,7 +46,7 @@ const LowerTriangle = styled(LowerTriangleComponent) <LowerTriangle>`
 // スタイル
 const NextButton = styled.div`
   position: absolute;
-  bottom: 1rem;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -61,8 +61,8 @@ const NextButton = styled.div`
   font-weight: 150;
   cursor: pointer;
   padding: 0.5rem;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   transition: calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
   &:hover {

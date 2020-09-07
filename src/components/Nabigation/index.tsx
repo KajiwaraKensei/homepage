@@ -2,8 +2,11 @@
 // ナビゲーション
 import React from "react"
 import Style from "./style"
-import { useHistory, useLocation } from "react-router-dom"
+import { useHistory, useLocation } from "react-router"
 import Method from "components/method"
+import Chats from "images/cats.png"
+import { Element } from "react-scroll"
+
 // ______________________________________________________
 // 型定義
 type Route = "raim" | "cham"
@@ -47,16 +50,18 @@ const Component: React.FC<Props> = (props) => {
         setMethodButton(false)
         break;
     }
-  }, [])
+  }, [location])
 
   return (
-    <Style ref={ref} transition={transition}>
-      <div className="_left">{children}</div>
-      <div onClick={screenTransition("raim")} className="left"><h1>RAIM</h1></div>
-      <div onClick={screenTransition("cham")} className="right"><h1>CHAM</h1></div>
-      <div className="_right">{children}</div>
-      <Method isOpen={methodButton} onChange={setMethodButton} />
-    </Style>
+    <Element name="nav">
+      <Style ref={ref} transition={transition}>
+        <div className="_left">{children}</div>
+        <div onClick={screenTransition("raim")} className="left"><div><img src={Chats} alt="" /><h1>RAIM</h1></div></div>
+        <div onClick={screenTransition("cham")} className="right"><div><img src={Chats} alt="" /><h1>CHAM</h1></div></div>
+        <div className="_right">{children}</div>
+        <Method isOpen={methodButton} onChange={setMethodButton} />
+      </Style>
+    </Element>
   )
 }
 export default Component

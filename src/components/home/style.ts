@@ -31,5 +31,13 @@ export default styled.div<Props>`
   .wrapper {
     margin: 0 auto;
     padding: 0 4%;
+    & > p {
+      z-index: 1;
+    }
+  }
+  & img {
+    display: block;
+    width: 20rem;
+    margin: 0 auto;
   }
 `;

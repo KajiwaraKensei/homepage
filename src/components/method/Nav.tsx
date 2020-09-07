@@ -20,9 +20,9 @@ const Component: React.FC<Props> = (props) => {
   }
   return (
     <Navigation>
-      <NavigationButton select={select === 0} onClick={onClick(0)} backgroundColor="#aad">会う</NavigationButton>
-      <NavigationButton select={select === 1} onClick={onClick(1)} backgroundColor="#ada">飼う</NavigationButton>
-      <NavigationButton select={select === 2} onClick={onClick(2)} backgroundColor="#daa">無理</NavigationButton>
+      <NavigationButton select={select === 0} onClick={onClick(0)} backgroundColor="#aad">Meet</NavigationButton>
+      <NavigationButton select={select === 1} onClick={onClick(1)} backgroundColor="#ada">Feed</NavigationButton>
+      <NavigationButton select={select === 2} onClick={onClick(2)} backgroundColor="#daa">Can't</NavigationButton>
     </Navigation>
   )
 }

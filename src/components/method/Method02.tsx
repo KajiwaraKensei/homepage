@@ -2,6 +2,9 @@
 // 
 import React from "react"
 import { Article } from "./style"
+import Cat from "images/catsmethod.png"
+
+
 // ______________________________________________________
 // 型定義
 
@@ -17,7 +20,7 @@ const Component: React.FC = (props) => {
   return (
     <Article>
       <header className="post-info">
-        <h2 className="post-title">猫に必要なもの</h2>
+        <h2 className="post-title">猫に必要なもの<img src={Cat} alt="" /></h2>
       </header>
       <div>
         <h2>ベッド</h2>

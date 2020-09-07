@@ -37,31 +37,80 @@ export default styled.div<Props>`
     transition: all ${hoverSpeed} ease-in;
     height: 100vh;
     width: 1%;
+    background-color: #000;
   }
   & > .right,
   & > .left {
-    color: #fff;
+    cursor: pointer;
+    color: #000;
     flex-shrink: 2;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
     transition: all ${hoverSpeed} ease-in;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    & > h1 {
+    & > div {
       transition: all ${hoverSpeed} ease-in;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 11rem;
+      height: 11rem;
+      border-radius: 50%50%;
+      @media screen and (max-width: 600px) {
+        width: 5rem;
+        height: 5rem;
+        & > img {
+          width: 3rem;
+          height: 3rem;
+          object-fit: cover;
+        }
+      }
+      &:hover {
+        background-color: #ffffff99;
+      }
+      & > h1 {
+        transition: all ${hoverSpeed} ease-in;
+        @media screen and (max-width: 600px) {
+          font-size: 0.9rem;
+        }
+      }
     }
   }
   & > .left {
     background-color: #b3947e;
+    & > div {
+      & > img {
+        transition: all ${hoverSpeed} ease-in;
+        transform: scale(-1, 1);
+      }
+      &:hover {
+        & > img {
+        }
+      }
+    }
   }
 
   & > .right {
     background-color: sandybrown;
+    & > div {
+      & > img {
+        transition: all ${hoverSpeed} ease-in;
+      }
+      &:hover {
+        & > img {
+        }
+      }
+    }
   }
+
   ${({ transition }) =>
     transition ? (transition === "raim" ? raim : cham) : ""}
 `;
@@ -76,14 +125,17 @@ const raim = css`
     animation: ${efw} 1.5s forwards;
     width: 30%;
     transition: ${Animation};
+    & > div {
+      &:hover {
+        & > img {
+        }
+      }
+    }
   }
   & > ._left {
     animation: ${efw1} 1.5s forwards;
     width: 100%;
     transition: ${Animation};
-    &:hover {
-      flex-shrink: 1.5;
-    }
   }
 `;
 const cham = css`
@@ -91,8 +143,11 @@ const cham = css`
     animation: ${efw} 1.5s forwards;
     width: 30%;
     transition: ${Animation};
-    &:hover {
-      flex-shrink: 2.5;
+    & > div {
+      &:hover {
+        & > img {
+        }
+      }
     }
   }
   & > ._right {

@@ -16,11 +16,18 @@ export default styled.button<Props>`
   border-radius: 50%;
   height: 7.5rem;
   width: 7.5rem;
+  font-weight: bold;
   border: none;
   outline: none;
   box-shadow: 0px 3px 8px 2px #00000060;
+  background-color: #fff;
   cursor: pointer;
   transition: 0.75s;
+  @media screen and (max-width: 600px) {
+    height: 5rem;
+    width: 5rem;
+    font-size: 0.8rem;
+  }
   &:hover {
     background-color: #000000e0;
     color: #fff;
@@ -36,17 +43,44 @@ export const Method = styled.div`
   width: 100%;
   height: 100%;
   background-color: #00000099;
+  & > h1 {
+    color: #fff;
+    padding: 0 3%;
+    margin: 0;
+    height: 5rem;
+    line-height: 5.5rem;
+    font-size: 3rem;
+
+    @media screen and (max-width: 600px) {
+      font-size: 1.3rem;
+    }
+  }
+
   & > div {
     position: fixed;
-    top: 3%;
-    left: 3%;
+    top: 5.5rem;
+    left: 50%;
     bottom: 0;
     width: 94%;
-    height: 94%;
+    max-width: 50rem;
+    height: calc(100% - 7rem);
+    transform: translateX(-50%);
     background-color: sandybrown;
     border-radius: 0.5rem;
     display: flex;
     overflow: hidden;
+    & > img {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 2rem;
+      cursor: pointer;
+      transition: all 0.25s ease-in;
+      border-radius: 50%;
+      &:hover {
+        transform: rotate(90deg);
+      }
+    }
   }
 `;
 
@@ -71,6 +105,21 @@ export const Article = styled.article`
     position: relative;
     padding-top: 4px;
   }
+  .post-title {
+    font-size: 2rem;
+    margin: 0;
+    @media screen and (max-width: 600px) {
+      font-size: 1.2rem;
+    }
+
+    & > img {
+      margin-left: 0.5rem;
+      transform: translateY(1rem);
+      width: 4rem;
+      height: 4rem;
+      object-fit: cover;
+    }
+  }
   & div {
     & > p {
       margin: 0.5rem;
@@ -78,6 +127,14 @@ export const Article = styled.article`
     & > h2 {
       font-size: 1rem;
       margin: 1.5rem 0 0.5rem;
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin: 0.2rem auto;
+        background-color: #000;
+      }
     }
   }
 `;
@@ -91,7 +148,6 @@ export const Navigation = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-basis: 5rem;
-
   & > div {
   }
 `;
@@ -110,16 +166,14 @@ export const NavigationButton = styled.div<NavigationProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ backgroundColor }) => backgroundColor};
   background-color: #fff;
-  border-bottom: 1px solid #aaa;
-  border-top: 1px solid #aaa;
+  transition: all 0.25s ease-in;
   ${({ select }) =>
     select &&
     css`
       background: none;
     `}
   &:hover {
-    filter: saturate(200%);
+    ${({ select }) => !select && `background-color: #ffffff69;`}
   }
 `;

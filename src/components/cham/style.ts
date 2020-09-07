@@ -26,7 +26,16 @@ export default styled.div<Props>`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 2rem;
+    margin: 1rem;
+    background-color: sandybrown;
+    box-shadow: 3px 4px 7px 0px #00000074;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    color: #000;
+  }
+  .item > p {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
   }
   .item > img {
     height: 20rem;
