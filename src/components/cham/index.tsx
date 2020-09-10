@@ -1,13 +1,11 @@
 // ______________________________________________________
-// 
+// Chamページ
 import React from "react"
 import Style from "./style"
-import { withRouter, RouteComponentProps } from "react-router-dom"
 
 // ______________________________________________________
 // 型定義
-
-interface Props extends RouteComponentProps {
+interface Props {
 }
 
 const images = [
@@ -21,22 +19,23 @@ const images = [
   "１歳６ヶ月",
   "２歳",
 ]
+
 // ______________________________________________________
 // コンポーネント
 const Component: React.FC<Props> = (props) => {
+  const mapImages = images.map((description, index) => (
+    <div className="item" key={"raim_" + index}>
+      <img src={`../../../images/cham${('00' + (index + 1)).slice(-2)}.jpg`} alt="" />
+      <p>{description}</p>
+    </div>
+  ))
 
   return (
     <Style>
       <div className="wrapper grid">
-        {images.map((description, index) => (
-          <div className="item" key={"raim_" + index}>
-            <img src={`../../../images/cham${('00' + (index + 1)).slice(-2)}.jpg`} alt="" />
-            <p>{description}</p>
-          </div>
-        ))}
+        {mapImages}
       </div>
-
     </Style>
   )
 }
-export default withRouter(Component)
+export default Component

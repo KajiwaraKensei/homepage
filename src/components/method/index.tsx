@@ -53,6 +53,7 @@ const MethodComponent: React.FC<Props> = (props) => {
   const onClickLi = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation()
   }
+
   return (
     <Method onClick={toggleButton(false)}>
       <h1>初めて、猫と暮らす方へ</h1>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from "react-router-dom"
-import Home from "./pages"
-import Cham from "pages/cham"
-import Raim from "pages/raim"
+import Home from "components/home"
+import Cham from "components/cham"
+import Raim from "components/raim"
 import Navigation from "components/Nabigation"
 import Footer from "components/Footer"
 function App() {
@@ -11,7 +11,6 @@ function App() {
     <div>
       <BrowserRouter>
         <Route exact path='/' component={Home} />
-
         <Navigation>
           <Route exact path='/cham' component={Cham} />
           <Route exact path='/raim' component={Raim} />
