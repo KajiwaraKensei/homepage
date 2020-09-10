@@ -30,8 +30,8 @@ export default styled.button<Props>`
     font-size: 0.8rem;
   }
   &:hover {
-    background-color: #000000e0;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
   }
 `;
 
