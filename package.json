@@ -30,7 +30,6 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://kajiwarakensei/cat",
   "eslintConfig": {
     "extends": "react-app"
   },

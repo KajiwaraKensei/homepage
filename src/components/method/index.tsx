@@ -15,8 +15,6 @@ interface Props {
   onChange?: (next: boolean) => void;
 }
 
-const NOTES = "METHOD"
-
 // ______________________________________________________
 // コンポーネント
 const Component: React.FC<Props> = (props) => {
@@ -31,7 +29,7 @@ const Component: React.FC<Props> = (props) => {
 
   return isOpen ? !isMethod ? (
     <Style onClick={toggleButton(true)} isButton={isOpen}>
-      {NOTES}
+      METHOD
     </Style>
   ) : <MethodComponent onChange={setMethod} isOpen={isMethod} /> : null
 }
