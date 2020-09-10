@@ -10,7 +10,7 @@ export type Props = {
 // スタイル
 export default styled.button<Props>`
   position: absolute;
-  top: 80%;
+  top: 75%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
@@ -20,7 +20,8 @@ export default styled.button<Props>`
   border: none;
   outline: none;
   box-shadow: 0px 3px 8px 2px #00000060;
-  background-color: #fff;
+  background-color: #000000e0;
+  color: #fff;
   cursor: pointer;
   transition: 0.75s;
   @media screen and (max-width: 600px) {

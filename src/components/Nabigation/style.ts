@@ -7,7 +7,16 @@ export type Props = {
 const Animation = `all .5s ease-out`;
 const AnimationFast = `all .2s ease-out`;
 const hoverSpeed = `.5s`;
-
+const poyooon = (isBack: boolean = false) => keyframes`
+0%  { transform: scale(${isBack && `-`}1.1, 0.9) translate(0%, 5%); }
+10%  { transform: scale(${isBack && `-`}1.1, 0.9) translate(0%, 5%); }
+40%  { transform: scale(${isBack && `-`}1.2, 0.8) translate(0%, 15%); }
+50%  { transform: scale(${isBack && `-`}1.0, 1.0) translate(0%, 0%); }
+60%  { transform: scale(${isBack && `-`}0.9, 1.2) translate(0%, -100%); }
+75%  { transform: scale(${isBack && `-`}0.9, 1.2) translate(0%, -20%); }
+85%  { transform: scale(${isBack && `-`}1.2, 0.8) translate(0%, 15%); }
+100% { transform: scale(${isBack && `-`}1.0, 1.0) translate(0%, 0%); }
+`;
 // ______________________________________________________
 // スタイル
 const efw = keyframes`
@@ -93,6 +102,9 @@ export default styled.div<Props>`
       }
       &:hover {
         & > img {
+          transition: 0.2s;
+          transform: scale(1, 1);
+          animation: ${poyooon()} 1s linear 0.2s infinite;
         }
       }
     }
@@ -106,6 +118,9 @@ export default styled.div<Props>`
       }
       &:hover {
         & > img {
+          transition: 0.2s;
+          transform: scale(-1, 1);
+          animation: ${poyooon(true)} 1s linear 0.2s infinite;
         }
       }
     }
@@ -128,6 +143,7 @@ const raim = css`
     & > div {
       &:hover {
         & > img {
+          animation: ${poyooon(true)} 1s linear 0s infinite;
         }
       }
     }
@@ -146,6 +162,7 @@ const cham = css`
     & > div {
       &:hover {
         & > img {
+          animation: ${poyooon()} 1s linear 0s infinite;
         }
       }
     }

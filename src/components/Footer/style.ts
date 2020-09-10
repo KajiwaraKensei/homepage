@@ -5,7 +5,6 @@ export type Props = {};
 
 // ______________________________________________________
 // スタイル
-
 export default styled.footer<Props>`
   background: #432;
   text-align: center;
