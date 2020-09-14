@@ -4,8 +4,8 @@
 
 ```bash
 git clone https://github.com/KajiwaraKensei/homepage.git
-npm install
-npm start
+yarn install
+yarn start
 ```
 
 [DEMO](https://kd-mura.web.app)
