@@ -12,7 +12,7 @@ export default styled.button<Props>`
   position: absolute;
   top: 75%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
   height: 7.5rem;
   width: 7.5rem;
@@ -25,6 +25,7 @@ export default styled.button<Props>`
   cursor: pointer;
   transition: 0.75s;
   @media screen and (max-width: 600px) {
+    top: 50%;
     height: 5rem;
     width: 5rem;
     font-size: 0.8rem;
